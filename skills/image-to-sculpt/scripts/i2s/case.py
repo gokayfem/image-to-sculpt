@@ -16,6 +16,7 @@ import datetime as dt
 import hashlib
 import json
 import os
+import re
 import shutil
 
 import numpy as np
@@ -35,6 +36,14 @@ def sha256(path):
         for b in iter(lambda: f.read(1 << 20), b""):
             h.update(b)
     return h.hexdigest()
+
+
+def safe_label(s):
+    """a region / part name safe to use as a file name: lowercase letters, digits and underscores only"""
+    out = re.sub(r"[^a-z0-9]+", "_", str(s).lower()).strip("_")
+    if not out:
+        raise SystemExit(f"invalid name {s!r}: use letters and digits")
+    return out
 
 
 def now():

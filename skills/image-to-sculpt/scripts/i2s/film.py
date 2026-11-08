@@ -33,7 +33,7 @@ def steps(case):
 
 
 def step_label(path):
-    z = np.load(path, allow_pickle=True)
+    z = np.load(path)
     return str(z["label"])
 
 

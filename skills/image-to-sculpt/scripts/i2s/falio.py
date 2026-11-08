@@ -12,6 +12,7 @@ Endpoints (fal.ai):
 import json
 import os
 import time
+import urllib.parse
 import urllib.request
 
 # estimated USD per call, for the budget guard (check the fal dashboard for exact billing)
@@ -42,6 +43,9 @@ def upload(path):
 
 
 def download(url, path, tries=3):
+    """fetch a result file; only https links are followed (urllib would also open file:// and ftp://)"""
+    if urllib.parse.urlparse(str(url)).scheme != "https":
+        raise ValueError(f"refusing to download a non-https link: {str(url)[:80]}")
     for k in range(tries):
         try:
             urllib.request.urlretrieve(url, path)

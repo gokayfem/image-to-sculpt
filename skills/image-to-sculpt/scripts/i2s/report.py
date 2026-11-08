@@ -19,13 +19,13 @@ S1, S2 = "#2a78d6", "#eb6834"
 
 
 def _mesh(path):
-    z = np.load(path, allow_pickle=True)
+    z = np.load(path)
     return z["verts"].astype(float), z["faces"].astype(np.int64)
 
 
 def hull_step(case):
     for p in sorted(glob.glob(os.path.join(case.steps_dir(), "*.npz"))):
-        z = np.load(p, allow_pickle=True)
+        z = np.load(p)
         if str(z["op"]) == "remesh":
             return p
     return None

@@ -70,7 +70,7 @@ def set_cam(cam, c, scale=1.0):
 
 
 def mesh_from(path, name="Sculpt"):
-    z = np.load(path, allow_pickle=True)
+    z = np.load(path)
     V, F = z["verts"].astype(np.float64), z["faces"].astype(np.int64)
     me = bpy.data.meshes.new(name)
     me.vertices.add(len(V))

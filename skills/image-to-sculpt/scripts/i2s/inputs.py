@@ -15,7 +15,7 @@ from PIL import Image
 from scipy import ndimage as ndi
 
 from . import falio
-from .case import normalise_input
+from .case import normalise_input, safe_label
 
 LOCK = threading.Lock()
 
@@ -381,12 +381,13 @@ def parts(case, prompts=(), boxes=()):
     mask = case.front()["mask"]
     out = {}
     for p in prompts:
-        label = re.sub(r"[^a-z0-9]+", "_", p.lower()).strip("_")
+        label = safe_label(p)
         m = sam_mask(case, case.p("ref", "front.png"), p, case.p("parts", f"{label}.png", mk=True),
                      case.p("parts", f"{label}_sam.json"))
         out[label] = m & ndi.binary_dilation(mask, iterations=2)
     for b in boxes:
-        label, coords = b.split(":")
+        label, coords = b.split(":", 1)
+        label = safe_label(label)
         x0, y0, x1, y1 = [float(c) for c in coords.split(",")]
         if max(x0, y0, x1, y1) <= 1.0:
             x0, x1, y0, y1 = x0 * W, x1 * W, y0 * H, y1 * H

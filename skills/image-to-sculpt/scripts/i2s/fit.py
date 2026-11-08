@@ -28,6 +28,7 @@ from scipy.spatial import cKDTree
 from . import geom as G
 from . import maps as MP
 from . import sdf as S
+from .case import safe_label
 
 BASE = dict(alpha=7e4, wsil=2.0, fpow=2)
 STAGES = {
@@ -241,6 +242,7 @@ def load_region(case, spec):
                 x0, x1, y0, y1 = x0 * W, x1 * W, y0 * H, y1 * H
             acc[int(y0):int(y1), int(x0):int(x1)] = True
         else:
+            s = safe_label(s)
             p = case.p("parts", f"{s}.png")
             if not os.path.exists(p):
                 raise SystemExit(f"no region '{s}': make it with i2s.py parts CASE --prompt '{s}' (or use box:...)")
