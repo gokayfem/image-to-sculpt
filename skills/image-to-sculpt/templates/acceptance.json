@@ -1,0 +1,8 @@
+{
+  "note": "Targets for the final sculpt, measured by `i2s.py check` / `report` at half resolution. Set before fitting; never lowered after a failure.",
+  "photo": {"iou_min": 0.97, "sil_px_max": 2.5, "normal_med_max_deg": 10.0, "depth_per_mille_max": 15.0},
+  "train_mean": {"iou_min": 0.92, "normal_med_max_deg": 18.0, "rough_ratio_range": [0.75, 1.25]},
+  "holdout": {"iou_min": 0.85, "normal_med_max_deg": 22.0},
+  "visual": ["no webs or flaps the views do not show", "gaps the photo shows are open", "no loose pieces or specks",
+             "symmetric where the subject is", "good from every angle of the turntable"]
+}

@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+*.blend1
+.DS_Store
+cases/
+runs/
+**/raw/
+**/blender/frames/
+**/blender/film_tmp/
+**/blender/tt_tmp/
+*.mp4
+*.glb
+*.stl

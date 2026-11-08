@@ -1,0 +1,5 @@
+{
+  "name": "image-to-sculpt",
+  "version": "0.1.0",
+  "description": "Turn one image of any subject into a measured, recorded 3D sculpt in Blender: front maps, registered generated views, a visual hull, map-fitting passes, timelapse, turntable and exports."
+}

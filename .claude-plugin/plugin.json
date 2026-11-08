@@ -1,0 +1,22 @@
+{
+  "name": "image-to-sculpt",
+  "displayName": "Image 2 Sculpt",
+  "version": "0.1.0",
+  "description": "Turn one image of any subject into a watertight 3D sculpt that is fitted to the image's own normals, outline and depth, completed from registered and screened generated views, recorded step by step and replayed in Blender, with map checks, a timelapse, a turntable and GLB/OBJ/STL exports.",
+  "author": {
+    "name": "gokayfem",
+    "url": "https://github.com/gokayfem"
+  },
+  "homepage": "https://github.com/gokayfem/image-to-sculpt",
+  "repository": "https://github.com/gokayfem/image-to-sculpt",
+  "license": "MIT",
+  "keywords": [
+    "sculpting",
+    "image-to-3d",
+    "blender",
+    "normal-maps",
+    "3d",
+    "timelapse",
+    "fal"
+  ]
+}

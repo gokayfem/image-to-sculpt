@@ -1,0 +1,14 @@
+---
+description: Image-to-3D sculpting measured against the image: front maps, registered views, visual hull, map-fitting passes, Blender replay
+globs: **/*.py
+alwaysApply: false
+---
+
+Copy this file into your project's `.cursor/rules/`. Install the skill too (Cursor reads `~/.cursor/skills`,
+`~/.claude/skills` and `.agents/skills`), so the rule can point at it.
+
+- Use the `image-to-sculpt` skill: scaffold a case with `scripts/i2s.py new`, then `prep`, `views`, `hull`, `fit`,
+  `check`, `blender`, `film`, `report` (or `run`).
+- Never trust a generated view's requested angle; register it over the whole circle and screen it.
+- The photo governs the surfaces it sees; generated views only fill in; their depth is never used.
+- Record every step; show the map sheet at every checkpoint; report the held-out view separately.

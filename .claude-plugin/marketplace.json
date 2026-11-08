@@ -1,0 +1,22 @@
+{
+  "name": "image-to-sculpt",
+  "description": "Turn any image into a measured, recorded 3D sculpt in Blender with coding agents",
+  "owner": {
+    "name": "gokayfem",
+    "url": "https://github.com/gokayfem"
+  },
+  "plugins": [
+    {
+      "name": "image-to-sculpt",
+      "source": "./",
+      "description": "Front maps, registered generated views, a visual hull and many recorded fit passes against every normal map and silhouette, replayed in Blender",
+      "category": "development",
+      "tags": [
+        "sculpting",
+        "image-to-3d",
+        "blender",
+        "normal-maps"
+      ]
+    }
+  ]
+}
